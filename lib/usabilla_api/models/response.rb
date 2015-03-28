@@ -23,7 +23,7 @@ module UsabillaApi
       end
 
       def campaign_results
-        @items = @items.map {|item| UsabillaApi::Models::Campaign::Item.new(item)} unless @items.nil?
+        @items = @items.map {|item| UsabillaApi::Models::CampaignResults::Item.new(item)} unless @items.nil?
       end
     end
   end
