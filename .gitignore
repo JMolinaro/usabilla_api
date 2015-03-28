@@ -1,1 +1,15 @@
-/startup.rb
+startup.rb
+.bundle/
+log/*.log
+.DS_Store
+*.gem
+pkg/
+coverage/
+startup.rb
+.idea
+.project
+Gemfile.lock
+.env
+doc/
+.ruby-version
+.ruby-gemset

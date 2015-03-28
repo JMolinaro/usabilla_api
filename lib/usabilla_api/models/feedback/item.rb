@@ -14,10 +14,10 @@ module UsabillaApi
           @email          = args['email'] || ''
           @image          = args['image'] || ''
           @labels         = args['labels'] || []
-          @nps            = args['nps'] || ''
+          @nps            = args['nps'] || nil
           @public_url     = args['publicUrl'] || []
           @rating         = args['rating'] || ''
-          @button_id      = args['buttonId'] || ''
+          @button_id      = args['buttonId'] || nil
           @tags           = args['tags'] || []
           @url            = args['url'] || ''
         end

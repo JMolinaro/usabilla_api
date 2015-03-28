@@ -2,7 +2,7 @@ module UsabillaApi
   module Models
     module CampaignResults
       class Item
-        attr_accessor :id, :name
+        attr_accessor :id, :user_agent, :location, :date, :campaign_id, :custom_data, :data, :url, :time
 
         def initialize(args = {})
           @id             = args['id'] || ''
