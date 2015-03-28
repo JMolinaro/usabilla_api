@@ -14,8 +14,9 @@ Run the bundle command to install it.
 UsabillaApi.configuration.access_key = 'YOUR-ACCESS-KEY'
 UsabillaApi.configuration.secret_key = 'YOUR-SECRET-KEY'
 ```
-Get your access and secret key here: [Usabilla Member API](https://usabilla.com/member/api)
 Change 'YOUR-ACCESS-KEY' & 'YOUR-SECRET-KEY' to appropriate values.
+
+Get your access and secret key here: [Usabilla Member API](https://usabilla.com/member/api)
 
 You can either return an Object (default) or a JSON by including and changing the value of the following configuration option;
 ```
