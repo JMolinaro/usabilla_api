@@ -25,19 +25,39 @@ UsabillaApi.configuration.json_response = true
 
 #Usage
 
-In a Controller, simply add one of the following;
+Simply add one of the following;
+(params = url query paramaters)
+
+########To get the buttons api response
 ```
-# To get the buttons api response
-@button = UsabillaApi.button(params)
+UsabillaApi.button(params)
+```
+########To get the buttons feedback items api response
+```
+UsabillaApi.feedback_items(params)
+```
+########To get the campaign api response
+```
+UsabillaApi.campaign(params)
+```
+########To get the campaign results api response
+```
+UsabillaApi.campaign_results(params)
+```
 
-# To get the buttons feedback items api response
-@feedback_items = UsabillaApi.feedback_items(params)
+######Example
+```
+# Controller /button_controller.rb
+def show
+  @buttons = UsabillaApi.button(params)
+end
 
-# To get the campaign api response
-@campaign = UsabillaApi.campaign(params)
-
-# To get the campaign results api response
-@campaign_results = UsabillaApi.campaign_results(params)
+# View /show.html.rb
+<h2>Buttons</h2>
+<% @buttons.each do |button| %>
+  Button ID: <% button.id %>
+  Button Name: <% button.name %>
+<% end %>
 ```
 
 ######Accepted Query String Parameters
