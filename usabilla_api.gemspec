@@ -4,7 +4,6 @@ require 'usabilla_api/version'
 Gem::Specification.new do |s|
   s.name        = 'usabilla_api'
   s.version     = UsabillaApi::VERSION
-  s.date        = '2015-03-19'
   s.summary     = "Ruby Usabilla API Gem."
   s.description = "A Ruby Usabilla API Gem that will allow you to connect to and use the Usabilla API"
   s.authors     = ["Jon Molinaro"]
