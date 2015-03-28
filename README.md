@@ -18,6 +18,8 @@ Change 'YOUR-ACCESS-KEY' & 'YOUR-SECRET-KEY' to appropriate values.
 
 Get your access and secret key here: [Usabilla Member API](https://usabilla.com/member/api)
 
+Full Usabilla API documentation: [Usabilla API](https://usabilla.com/api)
+
 You can either return an Object (default) or a the original JSON string.
 ```
 UsabillaApi.configuration.json_response = true
@@ -80,3 +82,10 @@ Feel free to fork or branch and create pull requests with any changes or cool ad
 Be sure to test any changes and include them in the pull request in order for it to be considered.
 
 Thanks!
+
+
+######TODO
+* Testing
+* Refactoring
+
+*isn't this always the case though?* ~_^
