@@ -18,12 +18,11 @@ Change 'YOUR-ACCESS-KEY' & 'YOUR-SECRET-KEY' to appropriate values.
 
 Get your access and secret key here: [Usabilla Member API](https://usabilla.com/member/api)
 
-Full Usabilla API documentation: [Usabilla API](https://usabilla.com/api)
-
 You can either return an Object (default) or a the original JSON string.
 ```
 UsabillaApi.configuration.json_response = true
 ```
+Full Usabilla API documentation: [Usabilla API](https://usabilla.com/api)
 
 #Usage
 
