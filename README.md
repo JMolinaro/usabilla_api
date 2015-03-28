@@ -2,7 +2,7 @@
 
 You can add it to your Gemfile with:
 ```
-`gem 'usabilla_api'
+gem 'usabilla_api'
 ```
 Run the bundle command to install it.
 
@@ -39,3 +39,14 @@ In a Controller, simply add one of the following;
 # To get the campaign results api response
 @campaign_results = UsabillaApi.campaign_results(params)
 ```
+
+###Accepted Params
+
+Usabilla excepts the following query string parameters as values;
+
+Returns the requested subset.
+`?limit=
+
+Returns the requested subset.
+`?since= 
+Note: Only accepts Unix Timestamps
