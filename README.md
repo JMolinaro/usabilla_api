@@ -1,4 +1,4 @@
-#Getting started
+#Installation
 
 You can add it to your Gemfile with:
 ```
@@ -6,7 +6,7 @@ gem 'usabilla_api'
 ```
 Run the bundle command to install it.
 
-#Configuration Options
+#Configuration
 
 Add these lines to the appropriate config/environments file;
 
@@ -23,7 +23,7 @@ You can either return an Object or a JSON by including and changing the value of
 UsabillaApi.configuration.json_response = false
 ```
 
-#Example Usage
+#Usage
 
 In a Controller, simply add one of the following;
 ```
@@ -40,13 +40,22 @@ In a Controller, simply add one of the following;
 @campaign_results = UsabillaApi.campaign_results(params)
 ```
 
-###Accepted Params
+###Accepted Query String Parameters
 
 Usabilla excepts the following query string parameters as values;
 
 Returns the requested subset.
-`?limit=
-
+```
+?limit=
+```
 Returns the requested subset.
-`?since= 
+```
+?since= 
+```
 Note: Only accepts Unix Timestamps
+
+#Contributing
+Feel free to fork or branch and create pull requests with any changes or cool additions!
+Be sure to test any changes and include them in the pull request in order for it to be considered.
+
+Thanks!
