@@ -28,19 +28,19 @@ UsabillaApi.configuration.json_response = true
 Simply add one of the following;
 (params = url query paramaters)
 
-########To get the buttons api response
+To get the **buttons** api response
 ```
 UsabillaApi.button(params)
 ```
-########To get the buttons feedback items api response
+To get the **buttons feedback** items api response
 ```
 UsabillaApi.feedback_items(params)
 ```
-########To get the campaign api response
+To get the **campaign** api response
 ```
 UsabillaApi.campaign(params)
 ```
-########To get the campaign results api response
+To get the **campaign results** api response
 ```
 UsabillaApi.campaign_results(params)
 ```
@@ -51,7 +51,8 @@ UsabillaApi.campaign_results(params)
 def show
   @buttons = UsabillaApi.button(params)
 end
-
+```
+```
 # View /show.html.rb
 <h2>Buttons</h2>
 <% @buttons.each do |button| %>
