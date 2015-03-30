@@ -55,7 +55,7 @@ module UsabillaApi
       datestamp = t.strftime('%Y%m%d')  # Date w/o time, used in credential scope
       long_date = t.strftime('%Y%m%dT%H%M%SZ')
 
-      query_string = build_query_string(@query_parameters)
+      query_string = "limit=#{@query_parameters['limit']}&since=#{@query_parameters['since']}"
       canonical_headers = "date:#{usbldate}\nhost:#{@host}\n"
       signed_headers = 'date;host'
       payload_hash = OpenSSL::Digest::SHA256.new.hexdigest
@@ -93,8 +93,5 @@ module UsabillaApi
       uri.gsub(':id', @query_id)
     end
 
-    def build_query_string(hash)
-      hash.to_a.reverse.map { |x| "#{x[0]}=#{x[1]}" }.join("&") unless hash.nil?
-    end
   end
 end
