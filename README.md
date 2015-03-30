@@ -54,7 +54,7 @@ def show
 end
 ```
 ```
-# View /show.html.rb
+# View /show.html.erb
 <h2>Buttons</h2>
 <% @buttons.each do |button| %>
   Button ID: <% button.id %>
