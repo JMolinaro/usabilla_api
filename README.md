@@ -31,19 +31,19 @@ Simply add one of the following;
 
 To get the **buttons** api response
 ```
-UsabillaApi.button(params)
+UsabillaApi.button.retrieve(params)
 ```
 To get the **buttons feedback** items api response
 ```
-UsabillaApi.feedback_items(params)
+UsabillaApi.button.feedback(params)
 ```
 To get the **campaign** api response
 ```
-UsabillaApi.campaign(params)
+UsabillaApi.campaign.retrieve(params)
 ```
 To get the **campaign results** api response
 ```
-UsabillaApi.campaign_results(params)
+UsabillaApi.campaign.results(params)
 ```
 
 ######Example

@@ -10,21 +10,14 @@ module UsabillaApi
         UsabillaApi::Models::Response
       end
 
-      def button(params)
-        UsabillaApi::Clients::Button.retrieve(params)
+      def button
+        UsabillaApi::Clients::Button
       end
 
-      def feedback_items(params)
-        UsabillaApi::Clients::Button.feedback(params)
+      def campaign
+        UsabillaApi::Clients::Campaign
       end
 
-      def campaign(params)
-        UsabillaApi::Clients::Campaign.retrieve(params)
-      end
-
-      def campaign_results(params)
-        UsabillaApi::Clients::Campaign.results(params)
-      end
     end
   end
 end

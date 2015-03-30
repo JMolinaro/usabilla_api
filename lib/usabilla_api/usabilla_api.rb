@@ -47,7 +47,7 @@ module UsabillaApi
     def send_signed_request(uri)
 
       if @access_key.nil? || @secret_key.nil?
-        raise 'Invalid Access Key. The Access Key supplied is invalid.'
+        raise 'The Access Key or Secret Key supplied is invalid.'
       end
 
       t = DateTime.now

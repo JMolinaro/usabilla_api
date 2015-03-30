@@ -25,29 +25,17 @@ module UsabillaApi
       end
     end
 
-    # context '#button' do
-    #   it 'returns the button client class' do
-    #     expect_method_to_return_class(:button, UsabillaApi::Clients::Button.retrieve({}))
-    #   end
-    # end
-    #
-    # context '#feedback_items' do
-    #   it 'returns the feedback items client class' do
-    #     expect_method_to_return_class(:feedback_items, UsabillaApi::Clients::Button.feedback({id: '1234'}))
-    #   end
-    # end
-    #
-    # context '#campaign' do
-    #   it 'returns the campaign client class' do
-    #     expect_method_to_return_class(:campaign, UsabillaApi::Clients::Campaign.retrieve({}))
-    #   end
-    # end
-    #
-    # context '#campaign_results' do
-    #   it 'returns the campaign results client class' do
-    #     expect_method_to_return_class(:campaign_results, UsabillaApi::Clients::Campaign.results({id: '1234'}))
-    #   end
-    # end
+    context '#button' do
+       it 'returns the button client class' do
+         expect_method_to_return_class(:button, UsabillaApi::Clients::Button)
+      end
+    end
+
+    context '#campaign' do
+      it 'returns the campaign client class' do
+        expect_method_to_return_class(:campaign, UsabillaApi::Clients::Campaign)
+      end
+    end
 
   end
 
