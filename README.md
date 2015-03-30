@@ -61,6 +61,7 @@ end
   Button Name: <%= button.name %>
 <% end %>
 ```
+[Example Rails App](https://github.com/JMolinaro/usabilla_api_example)
 
 ######Accepted Query String Parameters
 
