@@ -84,7 +84,6 @@ Thanks!
 
 
 ######TODO
-* Testing
 * Refactoring
 
 *isn't this always the case though?* ~_^
