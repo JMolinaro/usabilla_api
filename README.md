@@ -20,10 +20,6 @@ UsabillaApi.configuration.secret_key = 'YOUR-SECRET-KEY'
 ```
 Get your access and secret key here: [Usabilla Member API](https://usabilla.com/member/api)
 
-You can either return an Object (default) or a the original JSON string.
-```
-UsabillaApi.configuration.json_response = true
-```
 Full Usabilla API documentation: [Usabilla API](https://usabilla.com/api)
 
 #Usage
@@ -58,7 +54,7 @@ end
 ```
 # View /show.html.erb
 <h2>Buttons</h2>
-<% @buttons.each do |button| %>
+<% @buttons.items.each do |button| %>
   Button ID: <%= button.id %>
   Button Name: <%= button.name %>
 <% end %>
