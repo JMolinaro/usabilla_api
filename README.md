@@ -6,6 +6,8 @@ gem 'usabilla_api'
 ```
 Run the bundle command to install it.
 
+[Example Rails App](https://github.com/JMolinaro/usabilla_api_example)
+
 #Configuration
 
 ######Add these lines to the appropriate config/environments file
