@@ -1,5 +1,6 @@
 require 'rest-client'
 require 'openssl'
+require 'json'
 
 module UsabillaApi
 
@@ -76,7 +77,7 @@ module UsabillaApi
 
       # Send the request.
       request_url = uri + '?' + query_string
-      response = RestClient.get(UsabillaApi.configuration.base_uri + request_url, headers)
+      response = JSON.parse(RestClient.get(UsabillaApi.configuration.base_uri + request_url, headers))
 
       # Return Response
       response
