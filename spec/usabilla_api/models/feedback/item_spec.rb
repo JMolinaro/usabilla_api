@@ -6,7 +6,7 @@ module UsabillaApi
       describe Item do
         let(:feedback) { Models::Feedback::Item.new(feedback_hash) }
 
-        context 'a button_hash is valid' do
+        context 'a feedback_hash is valid' do
           let(:feedback_hash) do
             {
                 'id' => '1234567890',

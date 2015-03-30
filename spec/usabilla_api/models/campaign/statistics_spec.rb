@@ -6,7 +6,7 @@ module UsabillaApi
       describe Statistics do
         let(:statistics) { Models::Campaign::Statistics.new(statistics_hash) }
 
-        context 'a button_hash is valid' do
+        context 'a statisctics_hash is valid' do
           let(:statistics_hash) do
             {
                 'views' => 1,
