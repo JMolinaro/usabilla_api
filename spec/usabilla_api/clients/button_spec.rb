@@ -5,12 +5,10 @@ module UsabillaApi
     before(:each) {
       UsabillaApi.configuration.access_key = access_key
       UsabillaApi.configuration.secret_key = secret_key
-      UsabillaApi.configuration.json_response = set_json_response
     }
     let(:access_key) { 'access-key' }
     let(:secret_key) { 'secret-key' }
     let(:params) { {} }
-    let(:set_json_response) { false }
     let(:button_json){ { items: [{ id: '1234567890', name: 'Teirson'}],
                          count: 1, hasMore: false, lastTimestamp: 1234567890 }.to_json  }
     let(:feedback_json){ { items: [{ id: '1234567890', userAgent: 'Agent', comment: 'Feedback',
@@ -32,13 +30,9 @@ module UsabillaApi
       end
 
       context 'when we call button retrieve' do
-        it { expect(response.first).to be_an_instance_of UsabillaApi::Models::Button::Item }
+        it { expect(response.items.first).to be_an_instance_of UsabillaApi::Models::Button::Item }
       end
 
-      context 'when we set json response true' do
-        let(:set_json_response) { true }
-        it { expect(response).to eq (button_json) }
-      end
     end
 
     describe '#feedback' do
@@ -49,12 +43,7 @@ module UsabillaApi
       let(:params) { { 'id' => '12345' } }
 
       context 'when we call button feedback' do
-        it { expect(response.first).to be_an_instance_of UsabillaApi::Models::Feedback::Item }
-      end
-
-      context 'when we set json response true' do
-        let(:set_json_response) { true }
-        it { expect(response).to eq (feedback_json) }
+        it { expect(response.items.first).to be_an_instance_of UsabillaApi::Models::Feedback::Item }
       end
 
       context 'when no id is provided' do

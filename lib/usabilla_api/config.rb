@@ -20,7 +20,6 @@ module UsabillaApi
       @host                         = 'data.usabilla.com'
       @base_scope                   = '/live/website'
       @base_uri                     = @host_protocol + @host + @base_scope
-      @json_response                = false
       set_default_api_uris
       set_attr_accessors
     end

@@ -5,12 +5,10 @@ module UsabillaApi
     before(:each) {
       UsabillaApi.configuration.access_key = access_key
       UsabillaApi.configuration.secret_key = secret_key
-      UsabillaApi.configuration.json_response = set_json_response
     }
     let(:access_key) { 'access-key' }
     let(:secret_key) { 'secret-key' }
     let(:params) { {} }
-    let(:set_json_response) { false }
     let(:campaign_json){ { items: [{id: '1234567890', date: '01012015', buttonId: '1234567890',
                                     analyticsId: '1234567890', status: 'Active', name: 'Campaign',
                                     statistics: {views: 1, completed: 2, conversion: 3},
@@ -34,13 +32,9 @@ module UsabillaApi
       end
 
       context 'when we call campaign retrieve' do
-        it { expect(response.first).to be_an_instance_of UsabillaApi::Models::Campaign::Item }
+        it { expect(response.items.first).to be_an_instance_of UsabillaApi::Models::Campaign::Item }
       end
 
-      context 'when we set json response true' do
-        let(:set_json_response) { true }
-        it { expect(response).to eq (campaign_json) }
-      end
     end
 
     describe '#results' do
@@ -51,12 +45,7 @@ module UsabillaApi
       let(:params) { { 'id' => '12345' } }
 
       context 'when we call campaign results' do
-        it { expect(response.first).to be_an_instance_of UsabillaApi::Models::CampaignResults::Item }
-      end
-
-      context 'when we set json response true' do
-        let(:set_json_response) { true }
-        it { expect(response).to eq (results_json) }
+        it { expect(response.items.first).to be_an_instance_of UsabillaApi::Models::CampaignResults::Item }
       end
 
       context 'when no id is provided' do
