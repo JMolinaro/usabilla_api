@@ -13,9 +13,9 @@ Access & Secret Key are required
 ```
 UsabillaApi.configuration.access_key = 'YOUR-ACCESS-KEY'
 UsabillaApi.configuration.secret_key = 'YOUR-SECRET-KEY'
-```
-Change 'YOUR-ACCESS-KEY' & 'YOUR-SECRET-KEY' to appropriate values.
 
+#Change 'YOUR-ACCESS-KEY' & 'YOUR-SECRET-KEY' to appropriate values.
+```
 Get your access and secret key here: [Usabilla Member API](https://usabilla.com/member/api)
 
 You can either return an Object (default) or a the original JSON string.
