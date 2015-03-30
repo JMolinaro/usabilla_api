@@ -57,8 +57,8 @@ end
 # View /show.html.erb
 <h2>Buttons</h2>
 <% @buttons.each do |button| %>
-  Button ID: <% button.id %>
-  Button Name: <% button.name %>
+  Button ID: <%= button.id %>
+  Button Name: <%= button.name %>
 <% end %>
 ```
 
