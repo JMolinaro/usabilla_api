@@ -48,7 +48,7 @@ UsabillaApi.campaign.results(params)
 ```
 # Controller /button_controller.rb
 def show
-  @buttons = UsabillaApi.button(params)
+  @buttons = UsabillaApi.button.retrieve(params)
 end
 ```
 ```
