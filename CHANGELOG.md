@@ -3,6 +3,7 @@ Version History
     * All version update notes will be included here.
 ----
 
+* **1.1.2** Add Days Ago filter for 'days_ago' parameter to assist with generating a 'since' timestamp.
 * **1.1.1** Clean up JSON.parse.
 * **1.1.0** Removed json response flag as it is unnecessary for Rails/Sinatra integration. Simply adding .to_json on a proper json respond_to will yield the same results.
 * **1.0.1** Adjust Query String for proper routing.
