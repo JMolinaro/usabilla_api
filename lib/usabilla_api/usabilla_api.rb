@@ -1,6 +1,7 @@
 require 'rest-client'
 require 'openssl'
 require 'json'
+require 'date'
 
 module UsabillaApi
 
@@ -14,8 +15,10 @@ module UsabillaApi
       @base_scope         = UsabillaApi.configuration.base_scope
       @access_key         = UsabillaApi.configuration.access_key
       @secret_key         = UsabillaApi.configuration.secret_key
-      @query_parameters   = params || ''
-      @query_id           = @query_parameters["id"] || String.new
+      @query_id           = params['id']        || String.new
+      @query_limit        = params['limit']     || String.new
+      @query_since        = params['since']     || String.new
+      @query_days_ago     = params['days_ago']  || nil
     end
 
     def get_buttons
@@ -56,7 +59,7 @@ module UsabillaApi
       datestamp = t.strftime('%Y%m%d')  # Date w/o time, used in credential scope
       long_date = t.strftime('%Y%m%dT%H%M%SZ')
 
-      query_string = "limit=#{@query_parameters['limit']}&since=#{@query_parameters['since']}"
+      query_string = "limit=#{@query_limit}&since=#{get_since_timestamp}"
       canonical_headers = "date:#{usbldate}\nhost:#{@host}\n"
       signed_headers = 'date;host'
       payload_hash = OpenSSL::Digest::SHA256.new.hexdigest
@@ -94,5 +97,14 @@ module UsabillaApi
       uri.gsub(':id', @query_id)
     end
 
+    def since_filter(amount)
+      date_now = DateTime.now.new_offset(0)
+      date_ago = date_now - amount.to_i
+      (date_ago.to_time.to_f * 1000).to_i
+    end
+
+    def get_since_timestamp
+      @query_days_ago ? since_filter(@query_days_ago) : @query_since
+    end
   end
 end

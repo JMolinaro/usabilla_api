@@ -8,7 +8,7 @@ module UsabillaApi
     }
     let(:access_key) { 'access-key' }
     let(:secret_key) { 'secret-key' }
-    let(:params) { {} }
+    let(:params) { { 'days_ago' => 30 } }
     let(:button_json){ { items: [{ id: '1234567890', name: 'Teirson'}],
                          count: 1, hasMore: false, lastTimestamp: 1234567890 }.to_json  }
     let(:feedback_json){ { items: [{ id: '1234567890', userAgent: 'Agent', comment: 'Feedback',
