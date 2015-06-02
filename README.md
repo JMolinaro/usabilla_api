@@ -65,15 +65,18 @@ end
 
 Usabilla excepts the following query string parameters as values;
 
-Returns the requested subset.
+Returns the requested subset limit.
 ```
 ?limit=
 ```
-Returns the requested subset.
+Returns the requested subset since Unix Timestamps In Milliseconds.
 ```
 ?since= 
 ```
-Note: Only accepts Unix Timestamps
+Returns the requested subset of the days since this amount. (Overrides 'since' param)
+```
+?days_ago= 
+```
 
 #Contributing
 Feel free to fork or branch and create pull requests with any changes or cool additions!
