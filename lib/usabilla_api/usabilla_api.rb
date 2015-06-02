@@ -22,6 +22,7 @@ module UsabillaApi
     end
 
     def request(uri, require_id=false)
+      base_uri = uri
 
       if @access_key.nil? || @secret_key.nil?
         raise 'The Access Key or Secret Key supplied is invalid.'
@@ -31,7 +32,7 @@ module UsabillaApi
         if @query_id.nil? || @query_id.empty?
           raise 'Invalid ID Parameter'
         else
-          sub_query_id(uri)
+          base_uri = sub_query_id(uri)
         end
       end
 
@@ -45,7 +46,7 @@ module UsabillaApi
       signed_headers = 'date;host'
       payload_hash = OpenSSL::Digest::SHA256.new.hexdigest
 
-      canonical_request = "#{@http_method}\n#{@base_scope + uri}\n#{query_string}\n#{canonical_headers}\n#{signed_headers}\n#{payload_hash}"
+      canonical_request = "#{@http_method}\n#{@base_scope + base_uri}\n#{query_string}\n#{canonical_headers}\n#{signed_headers}\n#{payload_hash}"
 
       canonical_request_digest = OpenSSL::Digest::SHA256.new(canonical_request).hexdigest
       algorithm = 'USBL1-HMAC-SHA256'
@@ -60,7 +61,7 @@ module UsabillaApi
       headers = {'date' => usbldate, 'Authorization' => authorization_header}
 
       # Send the request.
-      request_url = uri + '?' + query_string
+      request_url = base_uri + '?' + query_string
       response = JSON.parse(RestClient.get(UsabillaApi.configuration.base_uri + request_url, headers))
 
       # Return Response
