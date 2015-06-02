@@ -28,7 +28,7 @@ Simply add one of the following;
 (params = url query paramaters)
 
 ####Apps API Requests
-**Apps**
+**App**
 ```
 UsabillaApi.apps_app.retrieve(params)
 ```
