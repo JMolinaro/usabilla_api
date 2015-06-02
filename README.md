@@ -27,28 +27,53 @@ Full Usabilla API documentation: [Usabilla API](https://usabilla.com/api)
 Simply add one of the following;
 (params = url query paramaters)
 
-To get the **buttons** api response
+####Apps API Requests
+**Apps**
 ```
-UsabillaApi.button.retrieve(params)
+UsabillaApi.apps_app.retrieve(params)
 ```
-To get the **buttons feedback** items api response
+**Feedback**
 ```
-UsabillaApi.button.feedback(params)
+UsabillaApi.apps_feedback.retrieve(params)
 ```
-To get the **campaign** api response
+
+####Email API Requests
+**Buttons**
 ```
-UsabillaApi.campaign.retrieve(params)
+UsabillaApi.email_button.retrieve(params)
 ```
-To get the **campaign results** api response
+**Feedback**
 ```
-UsabillaApi.campaign.results(params)
+UsabillaApi.email_feedback.retrieve(params)
+```
+
+#### Websites API Requests
+**Buttons**
+```
+UsabillaApi.websites_button.retrieve(params)
+```
+**Feedback**
+```
+UsabillaApi.websites_feedback.retrieve(params)
+```
+**Campaign**
+```
+UsabillaApi.websites_campaign.retrieve(params)
+```
+**Campaign Results**
+```
+UsabillaApi.websites_campaign_results.retrieve(params)
+```
+**Campaign Statistics**
+```
+UsabillaApi.websites_campaign_stats.retrieve(params)
 ```
 
 ######Example
 ```
 # Controller /button_controller.rb
 def show
-  @buttons = UsabillaApi.button.retrieve(params)
+  @buttons = UsabillaApi.websites_button.retrieve(params)
 end
 ```
 ```
@@ -85,7 +110,6 @@ Be sure to test any changes and include them in the pull request in order for it
 Thanks!
 
 
-######TODO
-* Refactoring
+######Updates
 
-*isn't this always the case though?* ~_^
+Please refer to the [Changelog](https://github.com/JMolinaro/usabilla_api/blob/master/CHANGELOG.md) for update information.
