@@ -6,6 +6,7 @@ gem 'usabilla_api'
 ```
 Run the bundle command to install it.
 
+[gem usabilla_api](https://rubygems.org/gems/usabilla_api/)
 [Example Rails App](https://github.com/JMolinaro/usabilla_api_example)
 
 #Configuration
