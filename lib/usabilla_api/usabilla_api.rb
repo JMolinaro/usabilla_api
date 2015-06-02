@@ -21,37 +21,18 @@ module UsabillaApi
       @query_days_ago     = params['days_ago']  || nil
     end
 
-    def get_buttons
-      send_signed_request(UsabillaApi.configuration.uri_button)
-    end
-
-    def get_feedback_items
-      if @query_id.nil? || @query_id.empty?
-        raise 'Invalid Button ID'
-      end
-      uri = sub_query_id(UsabillaApi.configuration.uri_feedback_items)
-      send_signed_request(uri)
-    end
-
-    def get_campaigns
-      send_signed_request(UsabillaApi.configuration.uri_campaign)
-    end
-
-    def get_campaign_results
-      if @query_id.nil? || @query_id.empty?
-        raise 'Invalid Campaign ID'
-      end
-      uri = sub_query_id(UsabillaApi.configuration.uri_campaign_results)
-
-      send_signed_request(uri)
-    end
-
-    private
-
-    def send_signed_request(uri)
+    def request(uri, require_id=false)
 
       if @access_key.nil? || @secret_key.nil?
         raise 'The Access Key or Secret Key supplied is invalid.'
+      end
+
+      if require_id
+        if @query_id.nil? || @query_id.empty?
+          raise 'Invalid ID Parameter'
+        else
+          sub_query_id(uri)
+        end
       end
 
       t = DateTime.now
@@ -86,6 +67,8 @@ module UsabillaApi
       response
 
     end
+
+    private
 
     def get_signature_key(key, long_date)
       k_date    = OpenSSL::HMAC.digest('sha256', 'USBL1' + key, long_date)

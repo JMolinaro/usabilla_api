@@ -25,15 +25,49 @@ module UsabillaApi
       end
     end
 
-    context '#button' do
-       it 'returns the button client class' do
-         expect_method_to_return_class(:button, UsabillaApi::Clients::Button)
+    context '#apps_app' do
+       it 'returns the apps_app client class' do
+         expect_method_to_return_class(:apps_app, UsabillaApi::Clients::Apps::App)
       end
     end
-
-    context '#campaign' do
-      it 'returns the campaign client class' do
-        expect_method_to_return_class(:campaign, UsabillaApi::Clients::Campaign)
+    context '#apps_feedback' do
+      it 'returns the apps_feedback client class' do
+        expect_method_to_return_class(:apps_feedback, UsabillaApi::Clients::Apps::Feedback)
+      end
+    end
+    context '#email_button' do
+      it 'returns the email_button client class' do
+        expect_method_to_return_class(:email_button, UsabillaApi::Clients::Email::Button)
+      end
+    end
+    context '#email_feedback' do
+      it 'returns the email_feedback client class' do
+        expect_method_to_return_class(:email_feedback, UsabillaApi::Clients::Email::Feedback)
+      end
+    end
+    context '#websites_button' do
+      it 'returns the websites_button client class' do
+        expect_method_to_return_class(:websites_button, UsabillaApi::Clients::Websites::Button)
+      end
+    end
+    context '#websites_feedback' do
+      it 'returns the websites_feedback client class' do
+        expect_method_to_return_class(:websites_feedback, UsabillaApi::Clients::Websites::Feedback)
+      end
+    end
+    context '#websites_campaign' do
+      it 'returns the websites_campaign client class' do
+        expect_method_to_return_class(:websites_campaign, UsabillaApi::Clients::Websites::Campaign)
+      end
+    end
+    context '#websites_campaign_results' do
+      it 'returns the websites_campaign_results client class' do
+        expect_method_to_return_class(:websites_campaign_results, UsabillaApi::Clients::Websites::CampaignResults)
+      end
+    end
+    context '#websites_campaign_stats' do
+      it 'returns the websites_campaign_stats client class' do
+        expect_method_to_return_class(:websites_campaign_stats, UsabillaApi::Clients::Websites::CampaignStats)
       end
     end
 

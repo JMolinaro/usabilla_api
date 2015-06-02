@@ -18,7 +18,7 @@ module UsabillaApi
       @http_method                  = 'GET'
       @host_protocol                = 'https://'
       @host                         = 'data.usabilla.com'
-      @base_scope                   = '/live/website'
+      @base_scope                   = '/live'
       @base_uri                     = @host_protocol + @host + @base_scope
       set_default_api_uris
       set_attr_accessors
@@ -28,10 +28,20 @@ module UsabillaApi
     #################################################################
 
     def set_default_api_uris
-      @uri_button                 ||= '/button'
-      @uri_feedback_items         ||= '/button/:id/feedback'
-      @uri_campaign               ||= '/campaign'
-      @uri_campaign_results       ||= '/campaign/:id/results'
+      # Apps
+      @uri_apps_app                       ||= '/apps'
+      @uri_apps_feedback                  ||= '/apps/:id/feedback'
+
+      # Email
+      @uri_email_button                   ||= '/email/button'
+      @uri_email_feedback                 ||= '/email/button/:id/feedback'
+
+      # Website
+      @uri_websites_button                ||= '/websites/button'
+      @uri_websites_feedback              ||= '/websites/button/:id/feedback'
+      @uri_websites_campaign              ||= '/websites/campaign'
+      @uri_websites_campaign_results      ||= '/websites/campaign/:id/results'
+      @uri_websites_campaign_stats        ||= '/websites/campaign/:id/stats'
     end
 
     def set_attr_accessors

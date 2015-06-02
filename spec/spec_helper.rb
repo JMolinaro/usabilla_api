@@ -13,6 +13,10 @@ WebMock.disable_net_connect!
 
 RSpec.configure do |c|
   c.treat_symbols_as_metadata_keys_with_true_values = true
+  c.before(:each){
+    UsabillaApi.configuration.access_key = 'access-key'
+    UsabillaApi.configuration.secret_key = 'secret-key'
+  }
 end
 
 require 'support/convenience'
