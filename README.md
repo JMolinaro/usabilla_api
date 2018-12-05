@@ -39,6 +39,11 @@ UsabillaApi.apps_app.retrieve(params)
 UsabillaApi.apps_feedback.retrieve(params)
 ```
 
+**Campaign Results**
+```
+UsabillaApi.apps_campaign_results.retrieve(params)
+```
+
 ####Email API Requests
 **Buttons**
 ```

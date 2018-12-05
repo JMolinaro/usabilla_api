@@ -6,10 +6,10 @@ module UsabillaApi
           attr_accessor :id, :active, :date, :name
 
           def initialize(args = {})
-            @id         = args['id']          || ''
-            @active     = args['active']      || false
-            @date       = args['date']        || ''
-            @name       = args['name']        || ''
+            @id         = args.with_indifferent_access['id']          || ''
+            @active     = args.with_indifferent_access['active']      || false
+            @date       = args.with_indifferent_access['date']        || ''
+            @name       = args.with_indifferent_access['name']        || ''
           end
         end
       end

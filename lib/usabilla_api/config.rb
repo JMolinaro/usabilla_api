@@ -31,6 +31,7 @@ module UsabillaApi
       # Apps
       @uri_apps_app                       ||= '/apps'
       @uri_apps_feedback                  ||= '/apps/:id/feedback'
+      @uri_apps_campaign_results          ||= '/apps/campaign/:id/results'
 
       # Email
       @uri_email_button                   ||= '/email/button'

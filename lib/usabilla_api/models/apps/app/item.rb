@@ -3,13 +3,14 @@ module UsabillaApi
     module Apps
       module App
         class Item
-          attr_accessor :id, :name, :date, :status
+          attr_accessor :id, :name, :date, :status, :raw_data
 
           def initialize(args = {})
-            @id             = args['id']      || ''
-            @name           = args['name']    || ''
-            @date           = args['date']    || ''
-            @status         = args['status']  || ''
+            @raw_data       = args.with_indifferent_access
+            @id             = raw_data['id']      || ''
+            @name           = raw_data['name']    || ''
+            @date           = raw_data['date']    || ''
+            @status         = raw_data['status']  || ''
           end
 
         end

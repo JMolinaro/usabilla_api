@@ -31,6 +31,7 @@ module UsabillaApi
               it { expect(campaign.data).to eq ({}) }
               it { expect(campaign.url).to eq ('fakeurl.com') }
               it { expect(campaign.time).to eq (5000) }
+              it { expect(campaign.raw_data).to eq(campaign_hash) }
             end
           end
         end

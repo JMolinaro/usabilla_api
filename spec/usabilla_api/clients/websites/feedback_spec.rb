@@ -13,7 +13,7 @@ module UsabillaApi
 
     describe '#retrieve' do
       before :each do
-        stub_request(:get, uri_stem(UsabillaApi.configuration.uri_websites_feedback)).to_return(:body => feedback_json)
+        stub_request(:get, uri_stem(UsabillaApi.configuration.uri_websites_feedback, params['id'])).to_return(:body => feedback_json)
       end
 
       context 'when we call websites feedback retrieve' do

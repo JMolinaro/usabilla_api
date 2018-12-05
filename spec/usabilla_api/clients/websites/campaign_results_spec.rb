@@ -11,7 +11,7 @@ module UsabillaApi
 
     describe '#retrieve' do
       before :each do
-        stub_request(:get, uri_stem(UsabillaApi.configuration.uri_websites_campaign_results)).to_return(:body => results_json)
+        stub_request(:get, uri_stem(UsabillaApi.configuration.uri_websites_campaign_results, params['id'])).to_return(:body => results_json)
       end
       let(:response) { UsabillaApi::Clients::Websites::CampaignResults.retrieve(params) }
 

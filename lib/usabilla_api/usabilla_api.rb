@@ -2,6 +2,7 @@ require 'rest-client'
 require 'openssl'
 require 'json'
 require 'date'
+require 'active_support/core_ext/hash/indifferent_access'
 
 module UsabillaApi
 
@@ -13,12 +14,12 @@ module UsabillaApi
       @host_protocol      = UsabillaApi.configuration.host_protocol
       @host               = UsabillaApi.configuration.host
       @base_scope         = UsabillaApi.configuration.base_scope
-      @access_key         = UsabillaApi.configuration.access_key
-      @secret_key         = UsabillaApi.configuration.secret_key
-      @query_id           = params['id']        || String.new
-      @query_limit        = params['limit']     || String.new
-      @query_since        = params['since']     || String.new
-      @query_days_ago     = params['days_ago']  || nil
+      @access_key         = UsabillaApi.configuration.access_key || params.with_indifferent_access['access_key']
+      @secret_key         = UsabillaApi.configuration.secret_key || params.with_indifferent_access['secret_key']
+      @query_id           = params.with_indifferent_access['id']       || String.new
+      @query_limit        = params.with_indifferent_access['limit']    || String.new
+      @query_since        = params.with_indifferent_access['since']    || String.new
+      @query_days_ago     = params.with_indifferent_access['days_ago'] || nil
     end
 
     def request(uri, require_id=false)
@@ -78,7 +79,7 @@ module UsabillaApi
     end
 
     def sub_query_id(uri)
-      uri.gsub(':id', @query_id)
+      uri.gsub(':id', CGI.escape(@query_id))
     end
 
     def since_filter(amount)
