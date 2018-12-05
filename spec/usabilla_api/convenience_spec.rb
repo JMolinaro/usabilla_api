@@ -35,6 +35,11 @@ module UsabillaApi
         expect_method_to_return_class(:apps_feedback, UsabillaApi::Clients::Apps::Feedback)
       end
     end
+    context '#apps_campaign_results' do
+      it 'returns the apps_campaign_results client class' do
+        expect_method_to_return_class(:apps_campaign_results, UsabillaApi::Clients::Apps::CampaignResults)
+      end
+    end
     context '#email_button' do
       it 'returns the email_button client class' do
         expect_method_to_return_class(:email_button, UsabillaApi::Clients::Email::Button)

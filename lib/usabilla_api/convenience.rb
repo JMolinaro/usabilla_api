@@ -18,6 +18,10 @@ module UsabillaApi
         UsabillaApi::Clients::Apps::Feedback
       end
 
+      def apps_campaign_results
+        UsabillaApi::Clients::Apps::CampaignResults
+      end
+
       def email_button
         UsabillaApi::Clients::Email::Button
       end
