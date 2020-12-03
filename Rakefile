@@ -1,5 +1,5 @@
-#require 'rspec/core/rake_task'
-#load 'lib/tasks/doc.rake'
+require 'rspec/core/rake_task'
+load 'lib/tasks/doc.rake'
 
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = '--color -fd'
@@ -7,4 +7,4 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 desc 'Run Tests'
-task :default => :spec
+task default: :spec
